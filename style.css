@@ -1,0 +1,494 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    background-color: #3C5963;
+    width: 100%;
+  }
+  
+  nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    background-color: #B5473A; 
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    font-weight: 300;
+    width: 100%;
+    z-index: 5;
+  }
+  
+  .logo img {
+    padding-left: 5%;
+    width: 11.6rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+  
+  .nav-links a:hover {
+    color: #F8D04C;
+  }
+  
+  #home {
+    display: flex;
+    height: 90%;
+    width: 100%;
+  }
+  
+  #home img {
+    height: 95vh;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95vh;
+    width: 100%;
+  }
+  
+  .info h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    padding-top: 10rem; 
+    padding-bottom: 5rem; 
+    color: #F8D04C;
+    font-weight: 100;
+  }
+  
+  .info p {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .Subscription {
+    padding-top: 5rem; 
+    width: 50%;
+  }
+  
+  .Subscription label {
+    border-bottom: 2px solid white;
+    background-color: transparent;
+  }
+  
+  .Subscription input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: 1.6rem;
+  }
+  
+  ::placeholder {
+    color: white;
+    font-style: italic;
+  }
+  
+  .cta {
+    display: flex;
+    margin: 1.25rem auto auto auto;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 20rem;
+    position: relative;
+    margin: auto;
+    padding: 1.9rem 2rem;
+    transition: all .2s ease;
+    margin-top: 1.25rem;
+  }
+  
+  .cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 2.8rem;
+    background: #9a974d;
+    width: 5.6rem;
+    height: 5.6rem;
+    transition: all .3s ease;
+  }
+  
+  .cta span {
+    position: relative;
+    font-size: 2rem;
+    line-height: 1.8rem;
+    letter-spacing: .25em;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .cta:hover::before {
+    width: 92%;
+    background: #B5473A;
+  }
+  
+  .cta:active::before {
+    transform: scale(.96);
+  }
+  
+  #videos {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: #B5473A;
+  }
+  
+  .dot {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 2rem;
+    margin-top: 5rem;
+    cursor: pointer;
+  }
+  
+  #dot1 {
+    background-color: #F8D04C;
+  }
+  
+  #players, #racquets{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #playersImg, #racquetsImg{
+    width: 20%;
+    height: auto;
+    margin: 10vh auto 5vh auto;
+    border-radius: 60%;
+  }
+  
+  #players section {
+    --gap: 4rem;
+  
+    display: grid;
+    gap: var(--gap / 2);
+  }
+  
+  #players section h2 {
+    font-size: 2rem;
+    color: #F8D04C;
+  }
+  
+  #players section header {
+    padding-inline-start: var(--gap);
+    padding-inline-end: var(--gap);
+    display: grid;
+    gap: calc(var(--gap) / 2);
+  }
+  
+  .horizontal-media-scroller {
+    --size: 30rem;
+  
+    display: grid;
+    grid-auto-flow: column;
+    gap: calc(var(--gap) / 2);
+    margin: 0;
+  
+    padding-inline-start: var(--gap);
+    padding-inline-end: var(--gap);
+    padding-block-start: calc(var(--gap) / 2);
+    padding-block-end: calc(var(--gap) / 2);
+  
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-left: var(--gap);
+    scroll-padding-right: var(--gap);
+    scroll-padding-inline: var(--gap);
+  }
+  
+  .horizontal-media-scroller li {
+    display: inline-block;
+  }
+  
+  .horizontal-media-scroller li:last-of-type figure {
+    position: relative;
+  }
+  
+  .horizontal-media-scroller li:last-of-type figure::after {
+    content: "";
+    position: absolute;
+  
+    inline-size: var(--gap);
+    block-size: 100%;
+  
+    inset-block-start: 0;
+    inset-inline-end: calc(var(--gap) * -1);
+  }
+  
+  .horizontal-media-scroller a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    outline-offset: 12px;
+  }
+  
+  .horizontal-media-scroller a:focus {
+    outline-offset: 7px;
+  }
+  
+  figure {
+    display: grid;
+    gap: calc(var(--gap) / 2);
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  figure picture {
+    inline-size: var(--size);
+    block-size: var(--size);
+  }
+  
+  figure img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  
+    border-radius: 1ex;
+    overflow: hidden;
+  
+    background-image: 
+      linear-gradient(
+        to bottom, 
+        hsl(0 0% 40%), 
+        hsl(0 0% 20%)
+      );
+  }
+  
+  figure figcaption {
+    font-size: 1.6rem;
+    font-weight: 100;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+  }
+  
+  .silo-grid-container {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(6, calc(100% /6));
+    grid-template-rows: minmax(150px, 1fr);
+    scroll-snap-type: x proximity;
+    overflow-x: scroll;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  /* @media (max-width: 768px) .tennis-silo-grid-container {
+    grid-template-columns: repeat(6, calc(100% /3.5));
+  }  */
+  
+  .silo {
+    background-size: cover;
+    text-align: center;
+    padding: 0;
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    height: 52rem;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 2s ease;
+  }
+  
+  .silo-grid-container a {
+    color: #B5473A;
+    text-decoration: none;
+  }
+  
+  .silo-grid-container h2 {
+    font-size: 2rem;
+    transition: all 5s linear;
+  }
+  
+  .silo-grid-container h3 {
+    font-size: 1.6rem;
+    transition: all 5s linear;
+  }
+  
+  .racquet-description {
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+  }
+  
+  .silo1 {
+    background-image: url("https://www.head.com/media/wysiwyg/Gravity_2021_1.jpg");
+  }
+  
+  .silo1:hover {
+    background-image: url("https://www.head.com/media/wysiwyg/Gravity_2021.jpg");
+  }
+  
+  .silo2 {
+    background-image: url("https://www.head.com/media/wysiwyg/Speed.jpg");
+  }
+  
+  .silo2:hover {
+    background-image: url("https://www.head.com/media/wysiwyg/Speed_rollover.jpg");
+  }
+  
+  .silo3 {
+    background-image: url("https://www.head.com/media/wysiwyg/Radical_new1.jpg");
+  }
+  
+  .silo3:hover {
+    background-image: url("https://www.head.com/media/wysiwyg/Radical_new_rollover2.jpg");
+  }
+  
+  .silo4 {
+    background-image: url("https://www.head.com/media/wysiwyg/Instinct_new.jpg");
+  }
+  
+  .silo4:hover {
+    background-image: url("https://www.head.com/media/wysiwyg/Instinct_new_rollover.jpg");
+  }
+  
+  .silo5 {
+    background-image: url("https://www.head.com/media/wysiwyg/Extreme.jpg");
+  }
+  
+  .silo5:hover {
+    background-image: url("https://www.head.com/media/wysiwyg/Extreme_rollover.jpg");
+  }
+  
+  .silo6 {
+    background-image: url("https://www.head.com/media/wysiwyg/Prestige.jpg");
+  }
+  
+  .silo6:hover {
+    background-image: url("https://www.head.com/media/wysiwyg/Prestige_rollover.jpg");
+  }
+  
+  .silo:hover > .shop {
+    z-index: 2;
+  }
+  
+  .silo:hover > .racquet-description {
+    z-index: -1;
+  }
+  
+  .shop {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 2rem;
+    padding: 0.5rem 3rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: white;
+    background: #3C5963;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    z-index: -1;
+    border-color: #3C5963;
+    transition: all .1s linear;
+  }
+  
+  .shop:hover {
+    color: #3C5963;
+    background: white;
+  }
+  
+  #racquetFinder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .racquetFinderText {
+    width: 50%;
+  }
+  
+  .racquetFinderText h2 {
+    padding-bottom: 2.5rem; 
+    font-size: 2rem;
+    color: #F8D04C;
+    font-weight: 100;
+  }
+  
+  .racquetFinderText p {
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .findBtn {
+    margin-top: 2.5rem; 
+    margin-left: 0;
+    width: 19rem;
+  }
+  
+  .findBtn a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer {
+    width: 100%;
+    background-color: #B5473A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
+  }
+  
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.6rem;
+    gap: 1rem;
+  }
+  
+  .copyright img {
+    height: 7rem;
+  }
+  
+  footer a:hover img {
+     transform: scale(1.05);
+  }
