@@ -1,6 +1,6 @@
-# Product-Landing-Page
+# Product Landing Page
 
-Tribute Page is a freeCodeCamp project.
+Product Landing Page is a freeCodeCamp project.
 
 codepen page: https://codepen.io/fjkdsn/full/QWgjERW
 
